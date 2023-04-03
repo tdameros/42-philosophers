@@ -1,11 +1,11 @@
-# Project Philosophers
+# Philosophers Project
 
 ## Description
 This is a project for the school 42. The goal of this project is to implement a simulation of the dining philosophers problem ([formulated by Dijkstra](https://en.wikipedia.org/wiki/Dining_philosophers_problem)) using threads and synchronization.
 
 ## Installation
-1. Clone the repository: `git clone https://github.com/username/project-philosophers.git`
-2. Navigate to the project directory: `cd project-philosophers`
+1. Clone the repository: `git clone https://github.com/tdameros/42-philosophers.git`
+2. Navigate to the project directory: `cd 42-philosophers`
 3. Build the program: `make`
 
 ## Usage
@@ -30,3 +30,6 @@ Here is an example of how to run the program with 5 philosophers who each have 8
 ```shell
 ./philo 5 800 200 200 7
 ```
+
+![](example/logs.png)
+![](example/visualizer.png)
