@@ -32,4 +32,7 @@ Here is an example of how to run the program with 5 philosophers who each have 8
 ```
 
 ![](example/logs.png)
+
+Visualizer : [https://nafuka11.github.io/philosophers-visualizer/](https://nafuka11.github.io/philosophers-visualizer/)
+
 ![](example/visualizer.png)
