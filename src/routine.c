@@ -43,6 +43,7 @@ void	*philosopher_routine(void *philosopher_ptr)
 		put_forks(philosopher);
 		sleep_philosopher(philosopher->time_to_sleep, philosopher);
 		print_log(philosopher, MSG_THINK);
+		usleep(100);
 	}
 	return (NULL);
 }

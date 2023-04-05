@@ -15,31 +15,21 @@
 #include "philosopher.h"
 #include "logs.h"
 
-static int	take_left_fork(t_philosopher *philosopher);
 static int	take_right_fork(t_philosopher *philosopher);
-static int	put_left_fork(t_philosopher *philosopher);
+static int	take_left_fork(t_philosopher *philosopher);
+static int	put_right_fork(t_philosopher *philosopher);
 
 int	take_forks(t_philosopher *philosopher)
 {
 	if (get_table_state(philosopher->table) == RUNNING)
-		take_left_fork(philosopher);
+		take_right_fork(philosopher);
 	else
 		return (0);
 	if (get_table_state(philosopher->table) == RUNNING)
-		take_right_fork(philosopher);
+		take_left_fork(philosopher);
 	else
-		return (put_left_fork(philosopher));
+		return (put_right_fork(philosopher));
 	philosopher->take_forks = true;
-	return (1);
-}
-
-static int	take_left_fork(t_philosopher *philosopher)
-{
-	int		index_fork;
-
-	index_fork = get_index_left_fork(philosopher);
-	pthread_mutex_lock(&philosopher->table->forks_mutex[index_fork]);
-	print_log(philosopher, MSG_FORK);
 	return (1);
 }
 
@@ -53,7 +43,17 @@ static int	take_right_fork(t_philosopher *philosopher)
 	return (1);
 }
 
-static int	put_left_fork(t_philosopher *philosopher)
+static int	take_left_fork(t_philosopher *philosopher)
+{
+	int		index_fork;
+
+	index_fork = get_index_left_fork(philosopher);
+	pthread_mutex_lock(&philosopher->table->forks_mutex[index_fork]);
+	print_log(philosopher, MSG_FORK);
+	return (1);
+}
+
+static int	put_right_fork(t_philosopher *philosopher)
 {
 	int		index_fork;
 
