@@ -31,7 +31,7 @@ Here is an example of how to run the program with 5 philosophers who each have 8
 ./philo 5 800 200 200 7
 ```
 
-![](example/logs.png)
+![](example/logs.gif)
 
 Visualizer : [https://nafuka11.github.io/philosophers-visualizer/](https://nafuka11.github.io/philosophers-visualizer/)
 
