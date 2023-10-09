@@ -41,12 +41,7 @@ MKDIR			=	mkdir -p
 
 OS	= $(shell uname -s)
 
-ifeq ($(OS), Linux)
-	LIBS = -pthread -lpthread
-endif
-ifeq ($(OS), Darwin)
-	LIBS =
-endif
+LIBS = -lpthread
 
 #***********************************  RULES  **********************************#
 
@@ -64,7 +59,7 @@ $(NAME):		$(OBJ)
 
 $(DIR_BUILD)%.o: %.c
 				mkdir -p $(shell dirname $@)
-				$(CC) $(CFLAGS) $(LIBS) $(DEP_FLAGS) -I $(DIR_INCLUDE) -c $< -o $@
+				$(CC) $(CFLAGS) $(DEP_FLAGS) -I $(DIR_INCLUDE) -c $< -o $@
 
 .PHONY: clean
 clean:
